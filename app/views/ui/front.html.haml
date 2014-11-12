@@ -5,4 +5,18 @@
       %h4
         Having trouble finding a unique, low-budget gift for a coworker or a relative? 
         %p
-          Register or Sign in and check out what others have to recommend!
+          Check out what others have to recommend!
+        %br
+        %br
+          %h5
+            %div.stuff
+              %form.form-inline
+                .form-group
+                  %input.form-control{:placeholder => "Username", :type => "username"}
+                .form-group
+                  %input.form-control{:placeholder => "Password", :type => "password"}
+                %fieldset.form-group.action
+                  %input(type="submit" value="Sign in" class="btn btn-default")
+                %br
+                %br
+                  Don't have an account? Click here to Register.
