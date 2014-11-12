@@ -1,0 +1,38 @@
+%div.add
+  %div.addy
+    %h1
+      Suggest a gift idea!
+      %br
+      %br
+        %h5
+        %label Who is it for?
+        .row
+          .col-sm-4
+            %select.form-control
+              %option Anyone
+              %option Boyfriend
+              %option Girlfriend
+              %option Sister
+              %option Brother
+              %option Coworker
+              %option Mom
+              %option Dad
+              %option Other (specify in description)
+        %br
+        %label How much is it?
+        .row
+          .col-sm-4
+            %select.form-control
+              %option $0-10
+              %option $11-20
+              %option $21-30
+              %option $31-40
+              %option $41+
+        %br
+  %div.description
+    %label Include a short description (add link)
+    %br
+    %textarea.formcontrol{:rows => 5}
+    %fieldset.form-group.actions.clearfix
+      %input(type="submit" value="Submit" class="btn btn-default")
+      %a(href="")
