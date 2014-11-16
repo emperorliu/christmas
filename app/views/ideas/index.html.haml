@@ -1,0 +1,35 @@
+%div.pool
+  %div.pooly
+    %h1
+      Pool of ideas!
+    %h5
+      = link_to "Home", home_path
+      || 
+      = link_to new_idea_path do
+        %span.red.glyphicon.glyphicon-gift
+        %span.red
+          Add Gift Idea!
+      || 
+      = link_to "Logout", logout_path
+    - @ideas.each do |idea|
+      %div.quote-container
+        %i.pin
+        %blockquote.note.yellow
+          For:
+          %b
+            = idea.recipient
+          %br
+          Price Range:
+          %b
+            = idea.price
+          %br
+          %br
+          = Rinku.auto_link(idea.description).html_safe
+          %cite.author 
+            - if current_user == idea.user
+              = link_to idea_path(idea), method: 'delete' do
+                %span.red.glyphicon.glyphicon-remove
+            - if current_user != idea.user
+              = idea.user.username
+              = link_to liked_items_path(idea_id: idea.id), method: 'post' do
+                %span.green.glyphicon.glyphicon-save

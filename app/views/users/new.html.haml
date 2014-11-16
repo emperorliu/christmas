@@ -1,0 +1,13 @@
+%div.front  
+  %div.welcome
+    %h1
+      Register
+      %h5
+      %br
+      %br
+        %div.register
+          = bootstrap_form_for(@user, layout: :horizontal, control_col: "col-sm-4") do |f|
+            = f.text_field :username, hide_label: :true, placeholder: "Username"
+            = f.password_field :password, hide_label: true, placeholder: "Password"
+            = f.form_group do
+              = f.submit "Register"

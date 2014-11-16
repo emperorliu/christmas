@@ -15,6 +15,7 @@ gem 'bcrypt-ruby'
 gem 'fabrication'
 gem 'faker'
 gem 'turbolinks'
+gem 'rinku'
 
 group :development do
   gem 'thin'

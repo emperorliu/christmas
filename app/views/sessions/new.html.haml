@@ -1,0 +1,22 @@
+%div.front  
+  %div.welcome
+    %h1
+      Browse cool Christmas gift ideas!
+      %h4
+        Having trouble finding a unique, low-budget gift for a coworker or a relative? 
+        %p
+          Check out what others have to recommend!
+        %br
+        %br
+          %h5
+            %div.stuff
+              = bootstrap_form_tag(url: sessions_path, layout: :inline) do |f|
+                = f.text_field :username, hide_label: :true, placeholder: "Username"
+                = f.password_field :password, hide_label: :true, placeholder: "Password"
+                = f.form_group do
+                  = f.submit "Sign In"
+              %br
+              %br
+                Don't have an account? Click
+                = link_to "here", register_path
+                to register.

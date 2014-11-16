@@ -1,0 +1,17 @@
+%div.add
+  %div.addy
+    %h1
+      Suggest a gift idea!
+      %br
+      %br
+      %h5
+      = bootstrap_form_for(@idea) do |f|
+        .row
+          .col-sm-4
+            = f.select :recipient,[["Anyone"], ["Boyfriend"], ["Girlfriend"], ["Sister"], ["Brother"], ["Coworker"], ["Mom"], ["Dad"], ["Other (specify in description)", "Other"]], label: "Who is it for?"
+            = f.select :price, [["$0-10"], ["$11-20"], ["$21-30"], ["$31-40"], ["$41+"]], label: "How much is it?"
+        %div.description
+          .row
+            .col-sm-9
+              = f.text_area :description, label: "What is it? (add link if possible)", rows: 5, class: "col-sm-3 form-group"
+              = f.submit "Submit", class: "btn btn-default"

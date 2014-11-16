@@ -1,0 +1,27 @@
+%div.pool
+  %div.pooly
+    %h1
+      Home (your saved ideas!)
+    %h5
+      = link_to "Back to Pool", ideas_path
+      || 
+      = link_to new_idea_path do
+        %span.red.glyphicon.glyphicon-gift
+        %span.red
+          Add Gift Idea!
+      || 
+      = link_to "Logout", logout_path
+    - @liked_items.each do |liked_item|
+      %div.quote-container
+        %i.pin
+        %blockquote.note.yellow
+          For:
+          %b
+            = liked_item.idea.recipient
+          %br
+          Price Range:
+          %b
+            = liked_item.idea.price
+          %br
+          %br
+          = Rinku.auto_link(liked_item.idea.description).html_safe
