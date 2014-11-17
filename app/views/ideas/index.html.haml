@@ -24,7 +24,7 @@
             = idea.price
           %br
           %br
-          = Rinku.auto_link(idea.description).html_safe
+          = Rinku.auto_link(idea.description) { |url| "Link" }.html_safe
           %cite.author 
             - if current_user == idea.user
               = link_to idea_path(idea), method: 'delete' do
