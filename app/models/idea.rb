@@ -1,7 +1,7 @@
 class Idea < ActiveRecord::Base
 
   belongs_to :user
-  has_many :liked_items
+  has_many :liked_items, dependent: :destroy
 
   validates_presence_of :description, :price, :recipient
 
